@@ -1,0 +1,4 @@
+{
+  "name": "DynamicPricing",
+  "main": "./DynamicPricing.tsx"
+}

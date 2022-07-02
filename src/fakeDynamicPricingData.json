@@ -1,0 +1,429 @@
+[
+  { "date": 1607126400000, "city": 68441, "district": 61758 },
+  { "date": 1608163200000, "city": 68793, "district": 61430 },
+  { "date": 1609200000000, "city": 69118, "district": 60988 },
+  { "date": 1610236800000, "city": 69428, "district": 61179 },
+  { "date": 1611273600000, "city": 70073, "district": 62197 },
+  { "date": 1612310400000, "city": 70389, "district": 63009 },
+  { "date": 1613347200000, "city": 70912, "district": 63740 },
+  { "date": 1614384000000, "city": 71226, "district": 63847 },
+  { "date": 1615420800000, "city": 71680, "district": 64324 },
+  { "date": 1616457600000, "city": 72111, "district": 65917 },
+  { "date": 1617494400000, "city": 72573, "district": 66046 },
+  { "date": 1618531200000, "city": 73103, "district": 67380 },
+  { "date": 1619568000000, "city": 73464, "district": 67589 },
+  { "date": 1620604800000, "city": 73723, "district": 67660 },
+  { "date": 1621641600000, "city": 73994, "district": 67461 },
+  { "date": 1622678400000, "city": 74327, "district": 67129 },
+  { "date": 1623715200000, "city": 74643, "district": 66420 },
+  { "date": 1624752000000, "city": 74789, "district": 67595 },
+  { "date": 1625788800000, "city": 75214, "district": 67495 },
+  { "date": 1626825600000, "city": 75741, "district": 66992 },
+  { "date": 1627862400000, "city": 75909, "district": 67935 },
+  { "date": 1628899200000, "city": 76404, "district": 67830 },
+  { "date": 1629936000000, "city": 76957, "district": 67097 },
+  { "date": 1630972800000, "city": 77494, "district": 68984 },
+  { "date": 1632009600000, "city": 77930, "district": 69229 },
+  {
+    "date": 1633046400000,
+    "city": 78421,
+    "district": 70682,
+    "object_id": 79808
+  },
+  {
+    "date": 1633132800000,
+    "object_id": 79808,
+    "city": 78421,
+    "district": 70682
+  },
+  {
+    "date": 1633219200000,
+    "object_id": 79808,
+    "city": 78421,
+    "district": 70682
+  },
+  {
+    "date": 1633305600000,
+    "object_id": 79808,
+    "city": 78421,
+    "district": 70682
+  },
+  {
+    "date": 1633392000000,
+    "object_id": 79808,
+    "city": 78421,
+    "district": 70682
+  },
+  {
+    "date": 1633478400000,
+    "object_id": 79808,
+    "city": 78421,
+    "district": 70682
+  },
+  {
+    "date": 1633564800000,
+    "object_id": 79808,
+    "city": 78421,
+    "district": 70682
+  },
+  {
+    "date": 1633651200000,
+    "object_id": 79808,
+    "city": 78421,
+    "district": 70682
+  },
+  {
+    "date": 1633737600000,
+    "object_id": 79808,
+    "city": 78421,
+    "district": 70682
+  },
+  {
+    "date": 1633824000000,
+    "object_id": 79808,
+    "city": 78421,
+    "district": 70682
+  },
+  {
+    "date": 1633910400000,
+    "object_id": 79808,
+    "city": 78421,
+    "district": 70682
+  },
+  {
+    "date": 1633996800000,
+    "object_id": 79808,
+    "city": 78421,
+    "district": 70682
+  },
+  {
+    "date": 1634083200000,
+    "city": 78966,
+    "district": 70764,
+    "object_id": 79808
+  },
+  {
+    "date": 1634169600000,
+    "object_id": 79808,
+    "city": 78966,
+    "district": 70764
+  },
+  {
+    "date": 1634256000000,
+    "object_id": 79808,
+    "city": 78966,
+    "district": 70764
+  },
+  {
+    "date": 1634342400000,
+    "object_id": 79808,
+    "city": 78966,
+    "district": 70764
+  },
+  {
+    "date": 1634428800000,
+    "object_id": 79808,
+    "city": 78966,
+    "district": 70764
+  },
+  {
+    "date": 1634515200000,
+    "object_id": 79808,
+    "city": 78966,
+    "district": 70764
+  },
+  {
+    "date": 1634601600000,
+    "object_id": 79808,
+    "city": 78966,
+    "district": 70764
+  },
+  {
+    "date": 1634688000000,
+    "object_id": 79808,
+    "city": 78966,
+    "district": 70764
+  },
+  {
+    "date": 1634774400000,
+    "object_id": 79808,
+    "city": 78966,
+    "district": 70764
+  },
+  {
+    "date": 1634860800000,
+    "object_id": 79808,
+    "city": 78966,
+    "district": 70764
+  },
+  {
+    "date": 1634947200000,
+    "object_id": 79808,
+    "city": 78966,
+    "district": 70764
+  },
+  {
+    "date": 1635033600000,
+    "object_id": 79808,
+    "city": 78966,
+    "district": 70764
+  },
+  {
+    "date": 1635120000000,
+    "city": 79333,
+    "district": 70871,
+    "object_id": 79808
+  },
+  {
+    "date": 1635206400000,
+    "object_id": 79808,
+    "city": 79333,
+    "district": 70871
+  },
+  {
+    "date": 1635292800000,
+    "object_id": 79808,
+    "city": 79333,
+    "district": 70871
+  },
+  {
+    "date": 1635379200000,
+    "object_id": 79808,
+    "city": 79333,
+    "district": 70871
+  },
+  {
+    "date": 1635465600000,
+    "object_id": 79808,
+    "city": 79333,
+    "district": 70871
+  },
+  {
+    "date": 1635552000000,
+    "object_id": 79808,
+    "city": 79333,
+    "district": 70871
+  },
+  {
+    "date": 1635638400000,
+    "object_id": 79808,
+    "city": 79333,
+    "district": 70871
+  },
+  {
+    "date": 1635724800000,
+    "object_id": 79808,
+    "city": 79333,
+    "district": 70871
+  },
+  {
+    "date": 1635811200000,
+    "object_id": 79808,
+    "city": 79333,
+    "district": 70871
+  },
+  {
+    "date": 1635897600000,
+    "object_id": 79808,
+    "city": 79333,
+    "district": 70871
+  },
+  {
+    "date": 1635984000000,
+    "object_id": 79808,
+    "city": 79333,
+    "district": 70871
+  },
+  {
+    "date": 1636070400000,
+    "object_id": 79808,
+    "city": 79333,
+    "district": 70871
+  },
+  {
+    "date": 1636156800000,
+    "city": 79938,
+    "district": 72387,
+    "object_id": 79808
+  },
+  {
+    "date": 1636243200000,
+    "object_id": 79808,
+    "city": 79938,
+    "district": 72387
+  },
+  {
+    "date": 1636329600000,
+    "object_id": 79808,
+    "city": 79938,
+    "district": 72387
+  },
+  {
+    "date": 1636416000000,
+    "object_id": 79808,
+    "city": 79938,
+    "district": 72387
+  },
+  {
+    "date": 1636502400000,
+    "object_id": 79808,
+    "city": 79938,
+    "district": 72387
+  },
+  {
+    "date": 1636588800000,
+    "object_id": 79808,
+    "city": 79938,
+    "district": 72387
+  },
+  {
+    "date": 1636675200000,
+    "object_id": 80577,
+    "city": 79938,
+    "district": 72387
+  },
+  {
+    "date": 1636761600000,
+    "object_id": 80577,
+    "city": 79938,
+    "district": 72387
+  },
+  {
+    "date": 1636848000000,
+    "object_id": 80577,
+    "city": 79938,
+    "district": 72387
+  },
+  {
+    "date": 1636934400000,
+    "object_id": 80577,
+    "city": 79938,
+    "district": 72387
+  },
+  {
+    "date": 1637020800000,
+    "object_id": 80577,
+    "city": 79938,
+    "district": 72387
+  },
+  {
+    "date": 1637107200000,
+    "object_id": 80577,
+    "city": 79938,
+    "district": 72387
+  },
+  {
+    "date": 1637193600000,
+    "city": 80730,
+    "district": 72870,
+    "object_id": 80577
+  },
+  {
+    "date": 1637280000000,
+    "object_id": 80577,
+    "city": 80730,
+    "district": 72870
+  },
+  {
+    "date": 1637366400000,
+    "object_id": 80577,
+    "city": 80730,
+    "district": 72870
+  },
+  {
+    "date": 1637452800000,
+    "object_id": 80577,
+    "city": 80730,
+    "district": 72870
+  },
+  {
+    "date": 1637539200000,
+    "object_id": 80577,
+    "city": 80730,
+    "district": 72870
+  },
+  {
+    "date": 1637625600000,
+    "object_id": 80577,
+    "city": 80730,
+    "district": 72870
+  },
+  {
+    "date": 1637712000000,
+    "object_id": 80577,
+    "city": 80730,
+    "district": 72870
+  },
+  {
+    "date": 1637798400000,
+    "object_id": 80577,
+    "city": 80730,
+    "district": 72870
+  },
+  {
+    "date": 1637884800000,
+    "object_id": 80577,
+    "city": 80730,
+    "district": 72870
+  },
+  {
+    "date": 1637971200000,
+    "object_id": 80577,
+    "city": 80730,
+    "district": 72870
+  },
+  {
+    "date": 1638057600000,
+    "object_id": 80577,
+    "city": 80730,
+    "district": 72870
+  },
+  {
+    "date": 1638144000000,
+    "object_id": 80577,
+    "city": 80730,
+    "district": 72870
+  },
+  {
+    "date": 1638230400000,
+    "city": 81730,
+    "district": 73123,
+    "object_id": 80577
+  },
+  {
+    "date": 1638316800000,
+    "object_id": 80577,
+    "city": 81730,
+    "district": 73123
+  },
+  {
+    "date": 1638403200000,
+    "object_id": 80577,
+    "city": 81730,
+    "district": 73123
+  },
+  {
+    "date": 1638489600000,
+    "object_id": 80577,
+    "city": 81730,
+    "district": 73123
+  },
+  {
+    "date": 1638662400000,
+    "city": 81898,
+    "district": 73194,
+    "object_id": 80577
+  },
+  {
+    "date": 1638662400001,
+    "add_city": 81898,
+    "add_district": 73194,
+    "add_object_id": 80577
+  },
+  {
+    "date": 1639872000000,
+    "add_city": 81898,
+    "add_district": 73194,
+    "add_object_id": 80577
+  }
+]

@@ -1,5 +1,5 @@
 {
-  "name": "dynamic-price",
+  "name": "dynamic-pricing",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -10,9 +10,13 @@
     "@types/node": "^16.11.42",
     "@types/react": "^18.0.14",
     "@types/react-dom": "^18.0.5",
+    "@types/recharts": "^1.8.23",
+    "dayjs": "^1.11.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
+    "recharts": "^2.1.12",
+    "sass": "^1.53.0",
     "typescript": "^4.7.4",
     "web-vitals": "^2.1.4"
   },
