@@ -9,3 +9,72 @@
   display: flex;
   flex-direction: column;
 }
+
+.legend {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &Title {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 14px;
+  }
+
+  &List {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    animation: fadeIn .3s ease forwards;
+    align-items: center;
+
+    &Item {
+      cursor: pointer;
+    }
+
+    &Item + &Item {
+      margin-left: 20px;
+    }
+  }
+
+  &Type {
+    border-radius: 12px;
+    padding: 2px 8px;
+    transition: opacity 0.2s;
+
+    &Disable,
+    &Hover {
+      opacity: 0.5;
+    }
+
+    &Disable:hover {
+      opacity: 0.95;
+    }
+
+    &Info {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &Surface {
+        margin-right: 0.5rem;
+      }
+
+      &Text {
+        font-size: 14px;
+        font-weight: 600;
+      }
+    }
+
+    &Value {
+      font-weight: bold;
+      font-size: 14px;
+    }
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

@@ -1,7 +1,8 @@
-import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import dayjs, { ConfigType } from "dayjs";
 import toNumericStringWithDivider from "../../utils/toNumericStringWithDivider";
 import styles from "./DynamicPricing.module.scss";
+import CustomizedLegend from "./CustomizedLegend";
 
 type ModuleType = typeof import("recharts");
 
@@ -22,6 +23,11 @@ interface DynamicPricingType {
   dashed?: boolean;
 }
 
+export interface PreparedDynamicPricingType extends DynamicPricingType {
+  opacity: number;
+  active: boolean;
+}
+
 interface DynamicPricingEntity {
   date: number;
   city?: number;
@@ -32,7 +38,7 @@ interface DynamicPricingEntity {
   add_object_id?: number;
 }
 
-interface IDynamicPricing {
+interface IProps {
   types: DynamicPricingType[];
   data: DynamicPricingEntity[];
 }
@@ -45,10 +51,12 @@ const getDateFormated = (date: ConfigType) => dayjs(date).format("DD MMM");
 const priceFormater = (price: number) =>
   toNumericStringWithDivider(Math.round(price));
 
-const DynamicPricing = (props: IDynamicPricing) => {
+const DynamicPricing = (props: IProps) => {
   const canvasRef = useRef(null);
   const [rechartsModule, setRechartsModule] = useState<ModuleType | null>(null);
-  const [types, setTypes] = useState(() => getPreparedTypes(props.types));
+  const [types, setTypes] = useState<PreparedDynamicPricingType[]>(
+    getPreparedTypes(props.types)
+  );
 
   useLayoutEffect(() => {
     const loadRecharts = async () => {
@@ -66,6 +74,44 @@ const DynamicPricing = (props: IDynamicPricing) => {
     setTypes(getPreparedTypes(props.types));
   }, [props.types]);
 
+  const handleMouseEnterLegend = (event: React.MouseEvent<HTMLElement>) => {
+    const { currentTarget } = event;
+    const {
+      dataset: { type: currentType },
+    } = currentTarget;
+    const activeType = types.find((type) => type.typeName === currentType);
+
+    if (currentType && activeType?.active) {
+      setTypes((prevTypes) =>
+        prevTypes.map((type) =>
+          !type.typeName.includes(currentType) && type.active
+            ? { ...type, opacity: 0.5 }
+            : type
+        )
+      );
+    }
+  };
+
+  const handleMouseLeaveLegend = () => {
+    setTypes((prevTypes) => prevTypes.map((type) => ({ ...type, opacity: 1 })));
+  };
+
+  const handleClickLegend = (event: React.MouseEvent<HTMLElement>) => {
+    const { currentTarget } = event;
+    const {
+      dataset: { type: currentType },
+    } = currentTarget;
+
+    currentType &&
+      setTypes((prevTypes) =>
+        prevTypes.map((type) =>
+          type.typeName.includes(currentType)
+            ? { ...type, active: !type.active }
+            : type
+        )
+      );
+  };
+
   const renderDynamicPricing = () => {
     if (rechartsModule != null) {
       const {
@@ -75,6 +121,7 @@ const DynamicPricing = (props: IDynamicPricing) => {
         XAxis,
         YAxis,
         Line,
+        Legend,
       } = rechartsModule;
 
       return (
@@ -98,6 +145,18 @@ const DynamicPricing = (props: IDynamicPricing) => {
               tick={{ fontSize: "14px", color: "#333" }}
               interval="preserveStartEnd"
               tickCount={8}
+            />
+            <Legend
+              verticalAlign="top"
+              wrapperStyle={{ top: 20, left: 0, width: "100%" }}
+              content={
+                <CustomizedLegend
+                  types={types}
+                  handleMouseEnter={handleMouseEnterLegend}
+                  handleMouseLeave={handleMouseLeaveLegend}
+                  handleClick={handleClickLegend}
+                />
+              }
             />
             {types
               .filter((type) => type.active)
