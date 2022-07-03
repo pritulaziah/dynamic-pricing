@@ -3,6 +3,7 @@ import dayjs, { ConfigType } from "dayjs";
 import toNumericStringWithDivider from "../../utils/toNumericStringWithDivider";
 import styles from "./DynamicPricing.module.scss";
 import CustomizedLegend from "./CustomizedLegend";
+import CustomizedTooltip from "./CustomizedTooltip";
 
 type ModuleType = typeof import("recharts");
 
@@ -10,17 +11,12 @@ export enum DynamicPricingTypes {
   District = "district",
   City = "city",
   Object = "object_id",
-  AddCity = "add_city",
-  AddDistrict = "add_district",
-  AddObject = "add_object_id",
 }
 
 interface DynamicPricingType {
   typeName: DynamicPricingTypes;
   visualName?: string;
   color: string;
-  stroke?: boolean;
-  dashed?: boolean;
 }
 
 export interface PreparedDynamicPricingType extends DynamicPricingType {
@@ -33,9 +29,6 @@ interface DynamicPricingEntity {
   city?: number;
   district?: number;
   object_id?: number;
-  add_city?: number;
-  add_district?: number;
-  add_object_id?: number;
 }
 
 interface IProps {
@@ -84,7 +77,7 @@ const DynamicPricing = (props: IProps) => {
     if (currentType && activeType?.active) {
       setTypes((prevTypes) =>
         prevTypes.map((type) =>
-          !type.typeName.includes(currentType) && type.active
+          type.typeName !== currentType && type.active
             ? { ...type, opacity: 0.5 }
             : type
         )
@@ -105,7 +98,7 @@ const DynamicPricing = (props: IProps) => {
     currentType &&
       setTypes((prevTypes) =>
         prevTypes.map((type) =>
-          type.typeName.includes(currentType)
+          type.typeName === currentType
             ? { ...type, active: !type.active }
             : type
         )
@@ -122,6 +115,7 @@ const DynamicPricing = (props: IProps) => {
         YAxis,
         Line,
         Legend,
+        Tooltip,
       } = rechartsModule;
 
       return (
@@ -146,6 +140,7 @@ const DynamicPricing = (props: IProps) => {
               interval="preserveStartEnd"
               tickCount={8}
             />
+            <Tooltip content={<CustomizedTooltip types={types} />} />
             <Legend
               verticalAlign="top"
               wrapperStyle={{ top: 20, left: 0, width: "100%" }}
@@ -160,7 +155,7 @@ const DynamicPricing = (props: IProps) => {
             />
             {types
               .filter((type) => type.active)
-              .map(({ typeName, color, opacity, dashed }) => (
+              .map(({ typeName, color, opacity }) => (
                 <Line
                   key={typeName}
                   connectNulls
@@ -169,9 +164,9 @@ const DynamicPricing = (props: IProps) => {
                   strokeWidth="3"
                   dot={false}
                   strokeOpacity={opacity}
-                  activeDot={dashed ? false : { r: 8 }}
-                  strokeDasharray={dashed ? "4 4" : ""}
-                  animationBegin={dashed ? 1000 : 0}
+                  activeDot={{ r: 8 }}
+                  strokeDasharray={""}
+                  animationBegin={0}
                 />
               ))}
             <YAxis

@@ -3,6 +3,7 @@ import DynamicPricing, { DynamicPricingTypes } from './components/DynamicPricing
 import dynamicPricingData from "./fakeDynamicPricingData.json";
 
 function App() {
+  // TODO: random data
   const types = [
     {
       typeName: DynamicPricingTypes.District,
@@ -15,20 +16,7 @@ function App() {
       visualName: "This object",
       color: "rgb(97, 189, 79)"
     },
-    {
-      typeName: DynamicPricingTypes.AddCity,
-      color: "rgb(41, 143, 202)",
-      stroke: true,
-      dashed: true
-    },
-    {
-      typeName:  DynamicPricingTypes.AddDistrict,
-      color: "rgb(254, 171, 76)",
-      stroke: true,
-      dashed: true
-    },
-    { typeName: DynamicPricingTypes.AddObject, color: "rgb(97, 189, 79)", dashed: true },
-  ];
+  ]
 
   return (
     <div className="App">

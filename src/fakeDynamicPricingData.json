@@ -413,17 +413,5 @@
     "city": 81898,
     "district": 73194,
     "object_id": 80577
-  },
-  {
-    "date": 1638662400001,
-    "add_city": 81898,
-    "add_district": 73194,
-    "add_object_id": 80577
-  },
-  {
-    "date": 1639872000000,
-    "add_city": 81898,
-    "add_district": 73194,
-    "add_object_id": 80577
   }
 ]
