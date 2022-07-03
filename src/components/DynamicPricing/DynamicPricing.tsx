@@ -10,7 +10,7 @@ type ModuleType = typeof import("recharts");
 export enum DynamicPricingTypes {
   District = "district",
   City = "city",
-  Object = "object_id",
+  Object = "object",
 }
 
 interface DynamicPricingType {
@@ -24,11 +24,11 @@ export interface PreparedDynamicPricingType extends DynamicPricingType {
   active: boolean;
 }
 
-interface DynamicPricingEntity {
+export interface DynamicPricingEntity {
   date: number;
   city?: number;
   district?: number;
-  object_id?: number;
+  object?: number;
 }
 
 interface IProps {
