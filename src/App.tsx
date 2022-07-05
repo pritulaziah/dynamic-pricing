@@ -57,9 +57,9 @@ const generateRandomData = () => {
   const minDate = 1607126400000;
   let prevDate = minDate;
   const result = [];
-  let prevCity = randomInteger(50000, 100000);
-  let prevDistrict = randomInteger(50000, 100000);
-  let prevObject = randomInteger(50000, 100000);
+  let prevCity = randomInteger(5000, 10000);
+  let prevDistrict = randomInteger(5000, 10000);
+  let prevObject = randomInteger(5000, 10000);
   const arrayLength = randomInteger(30, 100);
   const skipCount = randomInteger(5, Math.round(Math.sqrt(arrayLength)));
 

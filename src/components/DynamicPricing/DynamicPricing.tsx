@@ -1,4 +1,4 @@
-import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useState } from "react";
 import dayjs, { ConfigType } from "dayjs";
 import toNumericStringWithDivider from "../../utils/toNumericStringWithDivider";
 import styles from "./DynamicPricing.module.scss";
@@ -36,6 +36,8 @@ interface IProps {
   data: DynamicPricingEntity[];
 }
 
+const CANVAS_FILL = ["#F8F9F9", "#FFFFFF"];
+
 const getPreparedTypes = (types: DynamicPricingType[]) =>
   types.map((type) => ({ ...type, opacity: 1, active: true }));
 
@@ -45,7 +47,6 @@ const priceFormater = (price: number) =>
   toNumericStringWithDivider(Math.round(price));
 
 const DynamicPricing = (props: IProps) => {
-  const canvasRef = useRef(null);
   const [rechartsModule, setRechartsModule] = useState<ModuleType | null>(null);
   const [types, setTypes] = useState<PreparedDynamicPricingType[]>(
     getPreparedTypes(props.types)
@@ -70,14 +71,14 @@ const DynamicPricing = (props: IProps) => {
   const handleMouseEnterLegend = (event: React.MouseEvent<HTMLElement>) => {
     const { currentTarget } = event;
     const {
-      dataset: { type: currentType },
+      dataset: { type: currentTypeName },
     } = currentTarget;
-    const activeType = types.find((type) => type.typeName === currentType);
+    const activeType = types.find((type) => type.typeName === currentTypeName);
 
-    if (currentType && activeType?.active) {
+    if (activeType?.active) {
       setTypes((prevTypes) =>
         prevTypes.map((type) =>
-          type.typeName !== currentType && type.active
+          type.typeName !== currentTypeName && type.active
             ? { ...type, opacity: 0.5 }
             : type
         )
@@ -92,13 +93,13 @@ const DynamicPricing = (props: IProps) => {
   const handleClickLegend = (event: React.MouseEvent<HTMLElement>) => {
     const { currentTarget } = event;
     const {
-      dataset: { type: currentType },
+      dataset: { type: currentTypeName },
     } = currentTarget;
 
-    currentType &&
+    currentTypeName &&
       setTypes((prevTypes) =>
         prevTypes.map((type) =>
-          type.typeName === currentType
+          type.typeName === currentTypeName
             ? { ...type, active: !type.active }
             : type
         )
@@ -128,8 +129,8 @@ const DynamicPricing = (props: IProps) => {
             <CartesianGrid
               horizontal
               vertical={false}
-              horizontalFill={["#F8F9F9", "#FFFFFF"]}
-              verticalFill={["#F8F9F9", "#FFFFFF"]}
+              horizontalFill={CANVAS_FILL}
+              verticalFill={CANVAS_FILL}
             />
             <XAxis
               dataKey="date"
@@ -165,8 +166,7 @@ const DynamicPricing = (props: IProps) => {
                   dot={false}
                   strokeOpacity={opacity}
                   activeDot={{ r: 8 }}
-                  strokeDasharray={""}
-                  animationBegin={0}
+                  animationBegin={100}
                 />
               ))}
             <YAxis
@@ -194,10 +194,8 @@ const DynamicPricing = (props: IProps) => {
   };
 
   return (
-    <div ref={canvasRef}>
-      <div className={styles.root} style={{ height: "450px" }}>
-        {renderDynamicPricing()}
-      </div>
+    <div className={styles.root} style={{ height: "450px" }}>
+      {renderDynamicPricing()}
     </div>
   );
 };
